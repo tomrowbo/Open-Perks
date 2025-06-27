@@ -17,184 +17,35 @@ export default function Section04() {
               <div className="w-[512px] max-w-full shrink-0">
                 {/* Copy */}
                 <h2 className="h2 mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-4]" data-aos-delay="100">
-                  Get cashback rewards on your favourite brands
+                  Unlock exclusive access and perks at premium venues
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-4]" data-aos-delay="200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Tap your phone to prove your status and enjoy instant upgrades, VIP rooms, and more—no airline status or loyalty program required.
                 </p>
 
                 {/* Lists */}
                 <div className="sm:columns-2 mb-8 space-y-8 sm:space-y-0" data-aos="fade-up" data-aos-anchor="[data-aos-id-4]" data-aos-delay="300">
                   {/* Column #1 */}
                   <div>
-                    <h5 className="font-bold mb-5">Physical Stores</h5>
+                    <h5 className="font-bold mb-5">Physical Venues</h5>
                     <ul className="inline-flex flex-col text-slate-500 space-y-2.5">
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Starbucks</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Tesco</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>American Eagle</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Bershka</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Sainsbury's</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Marks & Spencer</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Primark</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>SportsDirect</span>
-                      </li>
+                      <li className="flex items-center"><span className="mr-3">🛬</span><span>Airport Lounges</span></li>
+                      <li className="flex items-center"><span className="mr-3">🏨</span><span>Hotels & Resorts</span></li>
+                      <li className="flex items-center"><span className="mr-3">🧖‍♀️</span><span>Spas & Wellness</span></li>
+                      <li className="flex items-center"><span className="mr-3">🎰</span><span>Casinos & Private Clubs</span></li>
+                      <li className="flex items-center"><span className="mr-3">🛍️</span><span>Luxury Retail</span></li>
+                      <li className="flex items-center"><span className="mr-3">🏛️</span><span>Flagship Stores</span></li>
                     </ul>
                   </div>
                   {/* Column #2 */}
                   <div>
-                    <h5 className="font-bold mb-5">Online Stores</h5>
+                    <h5 className="font-bold mb-5">Digital & Hybrid</h5>
                     <ul className="inline-flex flex-col text-slate-500 space-y-2.5">
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Amazon Prime</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Universal Store</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Apple One</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Booking.com</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Netflix</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Deliveroo</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Spotify</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Well Made Clothes</span>
-                      </li>
+                      <li className="flex items-center"><span className="mr-3">🎟️</span><span>Exclusive Events</span></li>
+                      <li className="flex items-center"><span className="mr-3">💎</span><span>VIP Experiences</span></li>
+                      <li className="flex items-center"><span className="mr-3">🍽️</span><span>Fine Dining</span></li>
+                      <li className="flex items-center"><span className="mr-3">🛫</span><span>Travel Upgrades</span></li>
+                      <li className="flex items-center"><span className="mr-3">🛡️</span><span>Concierge Services</span></li>
                     </ul>
                   </div>
                 </div>
@@ -215,18 +66,8 @@ export default function Section04() {
               </div>
 
               {/* Image */}
-              <div className="w-full max-w-sm md:max-w-none md:ml-8 mt-8 md:mt-0">
-                <div className="relative -mx-8 md:mx-0">
-                  <Image
-                    src={Features}
-                    className="md:max-w-none ml-auto"
-                    width={496}
-                    height={496}
-                    alt="Features 04"
-                    data-aos="fade-up"
-                    data-aos-anchor="[data-aos-id-4]"
-                  />
-                </div>
+              <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
+                <Image src={Features} width={520} height={400} alt="Vaulted venues" />
               </div>
             </div>
           </div>

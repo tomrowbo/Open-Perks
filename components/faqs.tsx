@@ -14,28 +14,25 @@ export default function Faqs() {
             <div className="w-full md:w-1/2 space-y-8">
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">How can I add money to my account?</h4>
+                <h4 className="text-xl font-bold">What is a zero-knowledge (ZK) credential?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  A ZK credential lets you prove you meet a requirement (like spending over ₩10M) without revealing your identity or raw data. It's cryptographically secure and privacy-preserving.
                 </p>
               </div>
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">How is my document data stored/secured?</h4>
+                <h4 className="text-xl font-bold">How do I use Vaulted at a venue?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  Just tap your phone at a participating venue's terminal. Your ZK credential proves you qualify for access or perks without needing to join individual loyalty programmes.
                 </p>
               </div>
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">I do not want to pay now, how can I proceed?</h4>
+                <h4 className="text-xl font-bold">What does the merchant see?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  Merchants only see a yes/no answer to "Does this person qualify?" They never see your name, account, or spending details.
                 </p>
               </div>
             </div>
@@ -44,28 +41,25 @@ export default function Faqs() {
             <div className="w-full md:w-1/2 space-y-8">
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">How do I get started with card payments?</h4>
+                <h4 className="text-xl font-bold">How do I get started?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  Connect your bank and card accounts, generate your ZK credential, and you're ready to unlock perks at premium venues.
                 </p>
               </div>
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">Can I get a standard card for free?</h4>
+                <h4 className="text-xl font-bold">Is my data safe with Vaulted?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  Yes. Your raw data gets verified once and the proof is stored securely on the blockchain. From this point, you have full control over your data and what cryptographic proofs are shared.
                 </p>
               </div>
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">I don't have the required documents, how can I proceed?</h4>
+                <h4 className="text-xl font-bold">Can I use Vaulted internationally?</h4>
                 <p className="text-slate-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim
-                  ad minim veniam.
+                  Yes! Vaulted is designed to work across borders and with any participating venue or merchant.
                 </p>
               </div>
             </div>

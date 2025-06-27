@@ -33,9 +33,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Create custom cards</h4>
+              <h4 className="text-xl font-bold mb-1">Interoperable & Wallet-Agnostic</h4>
               <p className="text-slate-500">
-                Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                Vaulted works across banks, cards, and merchants—no brand lock-in or single card dependency.
               </p>
             </div>
 
@@ -67,9 +67,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Create custom cards</h4>
+              <h4 className="text-xl font-bold mb-1">Hidden Identity</h4>
               <p className="text-slate-500">
-                Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                Zero-knowledge credentials prove your status—never your identity. No central account, no PII risk.
               </p>
             </div>
 
@@ -100,9 +100,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Create custom cards</h4>
+              <h4 className="text-xl font-bold mb-1">Portable Spending Power</h4>
               <p className="text-slate-500">
-                Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                Carry your verified "spending power" anywhere—unlock perks at any participating venue, instantly.
               </p>
             </div>
           </div>

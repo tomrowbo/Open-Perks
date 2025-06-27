@@ -7,7 +7,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className="shrink-0 mr-4 flex items-center">
             {/* Logo */}
             <Link className="block" href="/" aria-label="Cruip">
               <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +27,7 @@ export default function Header() {
                 </g>
               </svg>
             </Link>
+            <span className="ml-3 text-slate-100 text-xl font-extrabold tracking-tight">Vaulted</span>
           </div>
 
           {/* Desktop navigation */}

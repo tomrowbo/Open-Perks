@@ -22,11 +22,10 @@ export default function Section02() {
 
                 {/* Copy */}
                 <h2 className="h2 text-white mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="100">
-                  Build a flexible card program for your business needs
+                  The Core Idea: Private Proof of Spending Power
                 </h2>
                 <p className="text-lg text-slate-400 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim
-                  veniam, quis nostrud exercitation.
+                  Vaulted lets you prove you're a high-value spender (e.g. "₩10M+ spent in the last 12 months") using zero-knowledge credentials. Tap your phone at premium venues to unlock perks— no data leak, no loyalty hassle. Merchants get high-LTV customers, never your raw data.
                 </p>
 
                 {/* Button */}
@@ -54,8 +53,7 @@ export default function Section02() {
                   />
                   <div>
                     <blockquote className="text-slate-400 m-0">
-                      “ We know the card market very well and this product provides the speed, flexible account model and API-first approach that no
-                      one else can. ”
+                      "We love using Vaulted. It's a great way to confidently attract high-spending customers without making them reveal their personal data."
                     </blockquote>
                   </div>
                 </div>
@@ -67,11 +65,11 @@ export default function Section02() {
                   <Image
                     className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 mt-16 md:mt-0 pointer-events-none -z-10 max-w-none mix-blend-lighten"
                     src={CardsIllustration}
-                    alt="Cards illustration"
+                    alt="ZK credential illustration"
                     aria-hidden="true"
                   />
                   <div data-aos="fade-up" data-aos-anchor="[data-aos-id-2]">
-                    <Image src={Features} className="md:max-w-none md:rotate-[48deg]" width={775} alt="Features 01" />
+                    <Image src={Features} className="md:max-w-none md:rotate-[48deg]" width={775} alt="Vaulted ZK" />
                   </div>
                 </div>
               </div>

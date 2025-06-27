@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import QuoteAuthor from '@/public/images/quote-author-02.jpg'
 import Features from '@/public/images/features-03.png'
 
 export default function Section03() {
@@ -11,7 +10,6 @@ export default function Section03() {
           className="absolute inset-0 rounded-tl-[100px] mb-24 md:mb-0 bg-linear-to-b from-slate-100 pointer-events-none -z-10"
           aria-hidden="true"
         />
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="pb-6 pt-12 md:pt-20">
             {/* Section content */}
@@ -20,44 +18,37 @@ export default function Section03() {
               <div className="w-[512px] max-w-full shrink-0 md:order-1">
                 {/* Copy */}
                 <h2 className="h2 mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-3]" data-aos-delay="100">
-                  Spend your money everwhere, pay anyone effortlessy
+                  Stakeholder Value
                 </h2>
-                <p className="text-lg text-slate-500 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-3]" data-aos-delay="200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim
-                  veniam, quis nostrud exercitation.
-                </p>
-
-                {/* Button */}
-                <div className="max-w-xs mx-auto sm:max-w-none mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-3]" data-aos-delay="300">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                  {/* Credential Provider */}
                   <div>
-                    <a className="btn-sm inline-flex items-center text-blue-50 bg-blue-500 hover:bg-blue-600 group shadow-xs" href="apply.html">
-                      Get your card
-                      <span className="tracking-normal text-sky-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
-                        <svg className="fill-current" width="12" height="10" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 6.002h7.586L6.293 8.295a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.416l-4-4a1 1 0 0 0-1.414 1.416l2.293 2.293H1a1 1 0 1 0 0 2Z" />
-                        </svg>
-                      </span>
-                    </a>
+                    <h4 className="text-lg font-bold mb-2">Credential Provider</h4>
+                    <ul className="text-slate-500 list-disc list-inside space-y-1">
+                      <li>Issues ZK credential: "Spent > ₩X in past 12 months"</li>
+                      <li>Monetize per verification or via proof marketplace</li>
+                    </ul>
                   </div>
-                </div>
-
-                {/* Quote */}
-                <div className="flex max-w-md mx-auto md:mx-0 text-left" data-aos="fade-up" data-aos-anchor="[data-aos-id-3]" data-aos-delay="300">
-                  <Image
-                    className="rounded-full self-start shrink-0 mr-3"
-                    src={QuoteAuthor}
-                    width={32}
-                    height={32}
-                    alt="Quote author 02"
-                  />
+                  {/* User */}
                   <div>
-                    <blockquote className="text-slate-500 m-0">
-                      “ We know the card market very well and this product provides the speed, flexible account model and API-first approach that no one else can. ”
-                    </blockquote>
+                    <h4 className="text-lg font-bold mb-2">User</h4>
+                    <ul className="text-slate-500 list-disc list-inside space-y-1">
+                      <li>Access premium spaces, invites, VIP treatment</li>
+                      <li>Build a portfolio of credentials (fashion, travel, dining, etc.)</li>
+                      <li>Feels in control, not farmed for data</li>
+                    </ul>
+                  </div>
+                  {/* Verifier */}
+                  <div>
+                    <h4 className="text-lg font-bold mb-2">Verifier</h4>
+                    <ul className="text-slate-500 list-disc list-inside space-y-1">
+                      <li>Acquires high-value, high-conversion customers</li>
+                      <li>Offers tailored perks: free entry, upgrades, samples</li>
+                      <li>No need to handle or store customer data</li>
+                    </ul>
                   </div>
                 </div>
               </div>
-
               {/* Image */}
               <div className="w-full max-w-sm md:max-w-none md:mr-8 mt-8 md:mt-0">
                 <div className="relative -mx-8 md:mx-0">
@@ -66,7 +57,7 @@ export default function Section03() {
                     className="md:max-w-none"
                     width={496}
                     height={496}
-                    alt="Features 03"
+                    alt="Stakeholder Value"
                     data-aos="fade-up"
                     data-aos-anchor="[data-aos-id-3]"
                   />
