@@ -16,7 +16,7 @@ export default function Faqs() {
               <div className="space-y-2">
                 <h4 className="text-xl font-bold">What is a zero-knowledge (ZK) credential?</h4>
                 <p className="text-slate-500">
-                  A ZK credential lets you prove you meet a requirement (like spending over ₩10M) without revealing your identity or raw data. It's cryptographically secure and privacy-preserving.
+                  A ZK credential lets you prove you meet a requirement (like spending over $100k) without revealing your identity or raw data. It's cryptographically secure and privacy-preserving.
                 </p>
               </div>
 

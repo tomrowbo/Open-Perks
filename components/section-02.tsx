@@ -25,7 +25,7 @@ export default function Section02() {
                   The Core Idea: Private Proof of Spending Power
                 </h2>
                 <p className="text-lg text-slate-400 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="200">
-                  Vaulted lets you prove you're a high-value spender (e.g. "₩10M+ spent in the last 12 months") using zero-knowledge credentials. Tap your phone at premium venues to unlock perks— no data leak, no loyalty hassle. Merchants get high-LTV customers, never your raw data.
+                  Vaulted lets you prove you're a high-value spender (e.g. "$100k spent in the last 12 months") using zero-knowledge credentials. Tap your phone at premium venues to unlock perks— no data leak, no loyalty hassle. Merchants get high-LTV customers, never your raw data.
                 </p>
 
                 {/* Button */}

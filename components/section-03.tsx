@@ -25,7 +25,7 @@ export default function Section03() {
                   <div>
                     <h4 className="text-lg font-bold mb-2">Credential Provider</h4>
                     <ul className="text-slate-500 list-disc list-inside space-y-1">
-                      <li>Issues ZK credential: "Spent ₩10M+ in past 12 months"</li>
+                      <li>Issues ZK credential: "Spent $100k in past 12 months"</li>
                       <li>Monetize per verification or via proof marketplace</li>
                     </ul>
                   </div>
