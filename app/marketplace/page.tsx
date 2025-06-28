@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaPlane, FaWalking, FaDollarSign, FaHeartbeat, FaTv, FaBook, FaShoppingCart, FaUtensils, FaHome } from 'react-icons/fa';
+import { MdApps } from 'react-icons/md';
 
 interface RewardCardProps {
   logo: string;
@@ -12,27 +14,28 @@ interface RewardCardProps {
 }
 
 const categories = [
-  { label: 'All Categories', icon: '' },
-  { label: 'Travel', icon: '' },
-  { label: 'Life and Mobility', icon: '' },
-  { label: 'Finance and Crypto', icon: '' },
-  { label: 'Health and Wellness', icon: '' },
-  { label: 'Entertainment', icon: '' },
-  { label: 'Learning and Development', icon: '' },
-  { label: 'Shopping and Retail', icon: '' },
-  { label: 'Food and Dining', icon: '' },
-  { label: 'Home and Living', icon: '' },
+  { label: 'All Categories', icon: <MdApps /> },
+  { label: 'Travel', icon: <FaPlane /> },
+  { label: 'Life and Mobility', icon: <FaWalking /> },
+  { label: 'Finance and Crypto', icon: <FaDollarSign /> },
+  { label: 'Health and Wellness', icon: <FaHeartbeat /> },
+  { label: 'Entertainment', icon: <FaTv /> },
+  { label: 'Learning and Development', icon: <FaBook /> },
+  { label: 'Shopping and Retail', icon: <FaShoppingCart /> },
+  { label: 'Food and Dining', icon: <FaUtensils /> },
+  { label: 'Home and Living', icon: <FaHome /> },
 ];
 
 const mockRewards: RewardCardProps[] = [
-  { logo: '', name: 'Aavia', category: 'Health and Wellness', offer: 'Spend $50 on competitor health apps in the last 30 days, get 20% off your first year.' },
-  { logo: '', name: 'Airalo', category: 'Travel', offer: 'Spend $20 on international roaming in the last week, get 10% off your first eSIM.' },
-  { logo: '', name: 'Airtm', category: 'Finance and Crypto', offer: 'Trade $100 in crypto on other platforms in the last 90 days, earn $5 bonus on your first exchange.' },
-  { logo: '', name: 'Akiflow', category: 'Learning and Development', offer: 'Spend $30 on productivity tools in the last month, get 3 months free on premium plan.' },
-  { logo: '', name: 'AloSIM', category: 'Travel', offer: 'Spend $15 on travel data in the last week, get Free 1GB data for new users.' },
-  { logo: '', name: 'Alcovita', category: 'Health and Wellness', offer: 'Spend $40 on health supplements in the last 30 days, get 15% off all Alcovita products.' },
-  { logo: '', name: 'Anyplace', category: 'Travel', offer: 'Spend $200 on short-term rentals in the last 90 days, save $50 on your next long-term stay.' },
-  { logo: '', name: 'Avis & Budget', category: 'Travel', offer: 'Spend $100 on ride-sharing in the last month, get up to 25% off car rentals.' },
+  { logo: '/images/aavia.png', name: 'Aavia', category: 'Health and Wellness', offer: 'Spend $50 on competitor health apps in the last 30 days, get 20% off your first year.' },
+  { logo: '/images/airalo.png', name: 'Airalo', category: 'Travel', offer: 'Spend $20 on international roaming in the last week, get 10% off your first eSIM.' },
+  { logo: '/images/airtm.jpg', name: 'Airtm', category: 'Finance and Crypto', offer: 'Trade $100 in crypto on other platforms in the last 90 days, earn $5 bonus on your first exchange.' },
+  { logo: '/images/akiflow.jpg', name: 'Akiflow', category: 'Learning and Development', offer: 'Spend $30 on productivity tools in the last month, get 3 months free on premium plan.' },
+  { logo: '/images/alosim.jpeg', name: 'AloSIM', category: 'Travel', offer: 'Spend $15 on travel data in the last week, get Free 1GB data for new users.' },
+  { logo: '/images/alcovita.jpg', name: 'Alcovita', category: 'Health and Wellness', offer: 'Spend $40 on health supplements in the last 30 days, get 15% off all Alcovita products.' },
+  { logo: '/images/americanexpress.png', name: 'American Express', category: 'Finance and Crypto', offer: 'Spend more than 1 cent on any card in the last 90 days, get $10 when signing up.' },
+  { logo: '/images/anyplace.webp', name: 'Anyplace', category: 'Travel', offer: 'Spend $200 on short-term rentals in the last 90 days, save $50 on your next long-term stay.' },
+  { logo: '/images/avisandbudget.png', name: 'Avis & Budget', category: 'Travel', offer: 'Spend $100 on ride-sharing in the last month, get up to 25% off car rentals.' },
   { logo: '', name: 'BetterHelp', category: 'Health and Wellness', offer: 'Spend $50 on mental wellness apps in the last 30 days, get your first month free.' },
   { logo: '', name: 'Better Speech', category: 'Health and Wellness', offer: 'Spend $30 on communication courses in the last month, get 10% off your first therapy session.' },
   { logo: '', name: 'Bilingval', category: 'Learning and Development', offer: 'Spend $20 on language learning apps in the last 90 days, get 2 months free on annual subscription.' },
@@ -82,7 +85,7 @@ const RewardCard: React.FC<RewardCardProps> = ({ logo, name, category, offer }) 
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-32 bg-gray-200 flex items-center justify-center">
         {logo ? (
-          <Image src={logo} alt={`${name} Logo`} width={80} height={80} objectFit="contain" />
+          <Image src={logo} alt={`${name} Logo`} fill style={{ objectFit: 'cover' }} className="rounded-none" />
         ) : (
           <span className="text-gray-500 text-sm">No Logo</span>
         )}
@@ -161,18 +164,21 @@ export default function MarketplacePage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           {/* Category Tabs Section */}
           <div className="mb-8 pb-4 border-b border-gray-200">
-            <div className="flex space-x-6 overflow-x-auto no-scrollbar text-blue-700">
-              {categories.map(cat => (
-                <button
-                  key={cat.label}
-                  className={`flex flex-col items-center p-2 rounded-lg transition-colors
-                    ${selectedCategory === cat.label ? 'bg-blue-100 text-blue-700 font-bold' : 'text-blue-400 hover:bg-blue-50'}`}
-                  onClick={() => setSelectedCategory(cat.label)}
-                >
-                  <span className="text-2xl mb-1">{cat.icon || '✨'}</span> {/* Placeholder icon */}
-                  <span className="text-xs font-medium whitespace-nowrap">{cat.label}</span>
-                </button>
-              ))}
+            <div className="flex space-x-6 overflow-x-auto no-scrollbar">
+              {categories.map(cat => {
+                const isSelected = selectedCategory === cat.label;
+                return (
+                  <button
+                    key={cat.label}
+                    className={`flex flex-col items-center p-2 rounded-lg transition-colors
+                      ${isSelected ? 'bg-blue-100 text-blue-700 font-bold' : 'text-gray-400 hover:bg-blue-50'}`}
+                    onClick={() => setSelectedCategory(cat.label)}
+                  >
+                    <span className={`text-2xl mb-1 ${isSelected ? 'text-blue-700' : 'text-gray-400'}`}>{cat.icon}</span>
+                    <span className="text-xs font-medium whitespace-nowrap">{cat.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

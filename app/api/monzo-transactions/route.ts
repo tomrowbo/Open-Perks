@@ -23,6 +23,7 @@ export async function GET() {
     }
 
     const data = await response.json();
+    console.log('Full Monzo API response:', JSON.stringify(data, null, 2));
     const totalSpent = data.transactions
       .filter((tx: any) => tx.amount < 0 && !tx.merchant?.name.includes('Pot'))
       .reduce((sum: number, tx: any) => sum + Math.abs(tx.amount), 0) / 100;
