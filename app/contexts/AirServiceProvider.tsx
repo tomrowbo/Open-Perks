@@ -93,7 +93,7 @@ export const AirServiceProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(true);
     try {
       await airService.login();
-      router.push("/success");
+      router.push("/connect");
     } catch (err) {
       console.error("Login failed:", err);
     } finally {

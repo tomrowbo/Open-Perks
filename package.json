@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.2.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
+    "@mocanetwork/air-credential-sdk": "^0.0.7-beta.1",
     "@mocanetwork/airkit": "^1.4.2",
     "@next/mdx": "15.1.6",
     "@types/mdx": "^2.0.13",
