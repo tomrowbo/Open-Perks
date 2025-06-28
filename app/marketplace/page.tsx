@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaPlane, FaWalking, FaDollarSign, FaHeartbeat, FaTv, FaBook, FaShoppingCart, FaUtensils, FaHome } from 'react-icons/fa';
 import { MdApps } from 'react-icons/md';
+import { useAirService } from '@/app/contexts/AirServiceProvider';
+import { AirCredentialWidget, type QueryRequest, type Language } from "@mocanetwork/air-credential-sdk";
+import "@mocanetwork/air-credential-sdk/dist/style.css";
+import { BUILD_ENV } from '@mocanetwork/airkit';
 
 interface RewardCardProps {
   logo: string;
@@ -80,7 +84,9 @@ const mockRewards: RewardCardProps[] = [
   { logo: '', name: 'Sephora', category: 'Shopping and Retail', offer: 'Spend $40 on beauty products in the last month, get a Free gift with any purchase over $25.' },
 ];
 
-const RewardCard: React.FC<RewardCardProps> = ({ logo, name, category, offer }) => {
+const BROKE_PROGRAM_ID = "c21hg030e9rgy0036618wL";
+
+const RewardCard: React.FC<RewardCardProps & { onClaim?: () => void, isClaiming?: boolean }> = ({ logo, name, category, offer, onClaim, isClaiming }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative w-full h-32 bg-gray-200 flex items-center justify-center">
@@ -96,8 +102,12 @@ const RewardCard: React.FC<RewardCardProps> = ({ logo, name, category, offer }) 
         <p className="text-gray-700 text-base mb-4 flex-grow">{offer}</p>
       </div>
       <div className="p-4 border-t border-gray-200 flex justify-between space-x-2">
-        <button className="flex-1 bg-blue-500 text-white text-sm px-3 py-2 rounded hover:bg-blue-600 transition-colors">
-          Claim Reward
+        <button
+          className="flex-1 bg-blue-500 text-white text-sm px-3 py-2 rounded hover:bg-blue-600 transition-colors"
+          onClick={onClaim}
+          disabled={isClaiming}
+        >
+          {isClaiming ? 'Verifying...' : 'Claim Reward'}
         </button>
         <button className="flex-1 border border-gray-300 text-gray-700 text-sm px-3 py-2 rounded hover:bg-gray-100 transition-colors">
           View Details
@@ -112,6 +122,57 @@ export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [location, setLocation] = useState('Anywhere');
   const [sortBy, setSortBy] = useState('Relevance');
+  const { airService } = useAirService();
+  const [isClaiming, setIsClaiming] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const fakeCode = 'AMEX-WELCOME-TR456743';
+  const redeemUrl = 'https://americanexpress.com/redeem';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(fakeCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  const handleClaimReward = async () => {
+    if (!airService) return;
+    setIsClaiming(true);
+    try {
+      const authResponse = await fetch('/api/verifier-auth', { method: 'POST' });
+      if (!authResponse.ok) {
+        throw new Error('Failed to get verifier authentication token');
+      }
+      const { token } = await authResponse.json();
+      const queryRequest: QueryRequest = {
+        process: "Verify",
+        verifierAuth: token,
+        programId: BROKE_PROGRAM_ID,
+      };
+      const rp = await airService.goToPartner("https://credential-widget.sandbox.air3.com/");
+      const widget = new AirCredentialWidget(queryRequest, process.env.NEXT_PUBLIC_PARTNER_ID!, {
+        endpoint: rp.urlWithToken,
+        airKitBuildEnv: BUILD_ENV.SANDBOX,
+        theme: "light",
+        locale: "en" as Language,
+        redirectUrlForIssuer: "localhost:3000/connect",
+      });
+      widget.on("verifyCompleted", (data: any) => {
+        setIsClaiming(false);
+        if (data.status === "Compliant") {
+          setShowModal(true);
+        }
+        widget.destroy();
+      });
+      widget.on("close", () => {
+        setIsClaiming(false);
+        widget.destroy();
+      });
+      widget.launch();
+    } catch (err) {
+      setIsClaiming(false);
+    }
+  };
 
   const filteredRewards = mockRewards.filter(reward => {
     const matchesCategory = selectedCategory === 'All Categories' || reward.category === selectedCategory;
@@ -214,9 +275,50 @@ export default function MarketplacePage() {
           {/* Reward Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredRewards.map((reward, index) => (
-              <RewardCard key={index} {...reward} />
+              <RewardCard
+                key={index}
+                {...reward}
+                onClaim={reward.name === 'American Express' ? handleClaimReward : undefined}
+                isClaiming={reward.name === 'American Express' ? isClaiming : false}
+              />
             ))}
           </div>
+
+          {/* Success Modal */}
+          {showModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+              <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative animate-fade-in z-10">
+                <button
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
+                  onClick={() => setShowModal(false)}
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+                <img src="/images/americanexpress.png" alt="American Express" className="mx-auto mb-4 w-20 h-20 rounded-full shadow" />
+                <h2 className="text-2xl font-bold mb-2 text-blue-700">Welcome to American Express!</h2>
+                <p className="mb-4 text-gray-600">Copy your exclusive welcome code below and redeem your offer.</p>
+                <div className="flex items-center justify-center mb-4">
+                  <span className="font-mono text-lg bg-gray-100 px-4 py-2 rounded-l select-all border border-gray-200">{fakeCode}</span>
+                  <button
+                    className={`bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r transition-colors border border-l-0 border-gray-200 ${copied ? 'bg-green-500 hover:bg-green-600' : ''}`}
+                    onClick={handleCopy}
+                  >
+                    {copied ? 'Copied!' : 'Copy'}
+                  </button>
+                </div>
+                <a
+                  href={redeemUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-6 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition-colors"
+                >
+                  Redeem Offer
+                </a>
+              </div>
+            </div>
+          )}
 
           {filteredRewards.length === 0 && (
             <div className="text-center py-12 text-gray-500">
