@@ -22,10 +22,10 @@ export default function Section02() {
 
                 {/* Copy */}
                 <h2 className="h2 text-white mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="100">
-                  The Core Idea: Private Proof of Spending Power
+                  The Offer Marketplace for Real Spenders
                 </h2>
                 <p className="text-lg text-slate-400 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="200">
-                  Vaulted lets you prove you're a high-value spender (e.g. "$100k spent in the last 12 months") using zero-knowledge credentials. Tap your phone at premium venues to unlock perks— no data leak, no loyalty hassle. Merchants get high-LTV customers, never your raw data.
+                  Vaulted lets you connect your bank and unlock exclusive offers. Merchants can target users who spend in certain categories or at competitors, and reward them for switching or loyalty. No points, no games—just real money for real spend.
                 </p>
 
                 {/* Button */}
@@ -53,7 +53,7 @@ export default function Section02() {
                   />
                   <div>
                     <blockquote className="text-slate-400 m-0">
-                      "We love using Vaulted. It's a great way to confidently attract high-spending customers without making them reveal their personal data."
+                      "Vaulted helped us reach real spenders from our competitors—and only pay for results."
                     </blockquote>
                   </div>
                 </div>

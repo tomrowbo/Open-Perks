@@ -21,13 +21,13 @@ export default function Hero() {
             <div className="md:w-[600px]">
               {/* Copy */}
               <h1 className="h1 text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-                The Private Status Layer for High-Spending Individuals
+                Unlock Exclusive Offers with Your Real Spending
               </h1>
               <p className="text-2xl text-blue-200 mb-4" data-aos="fade-up" data-aos-delay="200">
-                Spend more. Unlock more. Privately.
+                Connect your bank, prove your spend, and get rewarded by top brands for your loyalty—or for switching.
               </p>
               <p className="text-lg text-blue-200 mb-8" data-aos="fade-up" data-aos-delay="250">
-                Prove your spending power with zero-knowledge credentials. Tap to unlock exclusive access and perks—no data leaks, no loyalty hassle.
+                Vaulted connects your bank accounts to surface personalized, high-value offers. Merchants reward you for spending in certain categories or at competitors—no points, no games, just real rewards for your real spend.
               </p>
 
               {/* Buttons */}

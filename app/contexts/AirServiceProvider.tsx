@@ -93,7 +93,7 @@ export const AirServiceProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(true);
     try {
       await airService.login();
-      router.push("/connect");
+      router.push("/marketplace");
     } catch (err) {
       console.error("Login failed:", err);
     } finally {

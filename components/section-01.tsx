@@ -33,9 +33,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Interoperable & Wallet-Agnostic</h4>
+              <h4 className="text-xl font-bold mb-1">Works With All Your Banks & Cards</h4>
               <p className="text-slate-500">
-                Vaulted works across banks, cards, and merchants—no brand lock-in or single card dependency.
+                Connect any bank or card. No brand lock-in. Get rewarded wherever you spend.
               </p>
             </div>
 
@@ -67,9 +67,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Hidden Identity</h4>
+              <h4 className="text-xl font-bold mb-1">Private by Design</h4>
               <p className="text-slate-500">
-                Zero-knowledge credentials prove your status—never your identity. No central account, no PII risk.
+                Your data stays private. Only proof of spend is shared—never your raw transactions or identity.
               </p>
             </div>
 
@@ -100,9 +100,9 @@ export default function Section01() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-bold mb-1">Portable Spending Power</h4>
+              <h4 className="text-xl font-bold mb-1">Marketplace for Real Spend-Based Offers</h4>
               <p className="text-slate-500">
-                Carry your verified "spending power" anywhere—unlock perks at any participating venue, instantly.
+                Browse and claim offers from top brands, tailored to your real spending—especially if you switch from a competitor.
               </p>
             </div>
           </div>

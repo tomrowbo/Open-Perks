@@ -17,10 +17,10 @@ export default function Section04() {
               <div className="w-[512px] max-w-full shrink-0">
                 {/* Copy */}
                 <h2 className="h2 mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-4]" data-aos-delay="100">
-                  Unlock exclusive access and perks at premium venues
+                  Unlock Cashbacks, Discounts, and Welcome Bonuses
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-4]" data-aos-delay="200">
-                  Tap your phone to prove your status and enjoy instant upgrades, VIP rooms, and more—no airline status or loyalty program required.
+                  The more you spend—especially at competitors—the more you unlock. Get real money, discounts, and welcome bonuses at top brands, both online and in-store.
                 </p>
 
                 {/* Lists */}

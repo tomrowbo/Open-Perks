@@ -11,7 +11,7 @@ const LoginButton = () => {
       onClick={login}
       disabled={isLoading || !isInitialized}
     >
-      {isLoading ? "Connecting..." : "Get started"}
+      {isLoading ? "Connecting..." : "Explore Offers"}
       <span className="tracking-normal text-sky-400 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
         <svg
           className="fill-current"

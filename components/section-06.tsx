@@ -47,14 +47,13 @@ export default function Section06() {
                   What our users and partners say
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="200">
-                  Vaulted is trusted by high-spending individuals and premium venues for its privacy, exclusivity, and seamless experience.
+                  Vaulted is trusted by real spenders and top brands for its privacy, real rewards, and seamless experience.
                 </p>
                 <ul className="inline-flex flex-col text-slate-500 space-y-2.5 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="300">
-                  <li className="flex items-center"><span className="mr-3">🔒</span>Encrypted proofs securely stored on the blockchain</li>
-                  <li className="flex items-center"><span className="mr-3">🛡️</span>User controls their proof</li>
-                  <li className="flex items-center"><span className="mr-3">🙈</span>Merchants never see raw data</li>
-                  <li className="flex items-center"><span className="mr-3">🌍</span>Works at premium venues worldwide</li>
-                  <li className="flex items-center"><span className="mr-3">🏆</span>Tiered access for high spenders</li>
+                  <li className="flex items-center"><span className="mr-3">🔒</span>Only proof of spend is shared—never your raw data</li>
+                  <li className="flex items-center"><span className="mr-3">💸</span>Get paid to switch or stay loyal</li>
+                  <li className="flex items-center"><span className="mr-3">🏪</span>Merchants reach real spenders from competitors</li>
+                  <li className="flex items-center"><span className="mr-3">🌍</span>Works at top brands worldwide</li>
                 </ul>
               </div>
 
@@ -74,7 +73,7 @@ export default function Section06() {
                         </div>
                         <div className="grow flex flex-col relative bg-linear-to-t from-slate-800 to-slate-700 p-6 pt-14">
                           <p className="grow font-medium text-slate-200 mb-4">
-                            “ With Vaulted, I can prove my status and unlock VIP perks—without ever giving up my personal data. It's the future of privacy.”
+                            “I got $50 to switch my coffee shop. Vaulted made it easy and private.”
                           </p>
                           <div className="font-medium text-sm text-slate-500">
                             <span className="text-slate-200">Alex Kim</span> - <span className="text-slate-400">Vaulted User</span>
@@ -94,7 +93,7 @@ export default function Section06() {
                             alt="Venue sign"
                           />
                           <p className="grow font-medium text-slate-200 mb-4">
-                            “ Vaulted brings us high-value guests with zero friction. We never see their data, but we know they're the real deal.”
+                            “Vaulted brings us real spenders from our competitors, and we only pay for results.”
                           </p>
                           <div className="font-medium text-sm text-slate-500">
                             <span className="text-slate-200">Sophie Lee</span> - <span className="text-slate-400">Lounge Manager</span>

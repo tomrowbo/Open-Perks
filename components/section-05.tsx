@@ -18,9 +18,11 @@ export default function Section05() {
             <div className="relative max-w-xl mx-auto md:max-w-none text-center md:text-left">
               {/* Section header */}
               <div className="md:max-w-3xl mb-12 md:mb-20" data-aos="fade-up">
-                <h2 className="h2 text-white mb-4">Connect all your bank cards to verify your spending power</h2>
+                <h2 className="h2 text-white mb-4">How It Works</h2>
                 <p className="text-lg text-blue-200 mb-8">
-                  Securely link your accounts and cards. Vaulted aggregates your spending data into a single, private zero-knowledge credential— so you can tap and prove your spending power without raw data leaving your device.
+                  1. Connect your bank and cards securely.<br />
+                  2. Browse offers tailored to your real spend—see which merchants want to reward you.<br />
+                  3. Claim your reward and get paid to switch or stay loyal.
                 </p>
               </div>
 
@@ -48,9 +50,9 @@ export default function Section05() {
                   <div className="mb-3">
                     <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">1</div>
                   </div>
-                  <h4 className="text-white text-xl font-bold mb-1">Connect your cards & accounts</h4>
+                  <h4 className="text-white text-xl font-bold mb-1">Connect your bank & cards</h4>
                   <p className="text-blue-200">
-                    Link your bank and card accounts in seconds. Your data stays private and encrypted.
+                    Link your accounts in seconds. Your data stays private and encrypted.
                   </p>
                 </div>
 
@@ -59,9 +61,9 @@ export default function Section05() {
                   <div className="mb-3">
                     <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">2</div>
                   </div>
-                  <h4 className="text-white text-xl font-bold mb-1">Generate your private credential</h4>
+                  <h4 className="text-white text-xl font-bold mb-1">Browse real spend-based offers</h4>
                   <p className="text-blue-200">
-                    Vaulted creates a zero-knowledge proof of your spending history.
+                    See which merchants want to reward you for your real spend—especially if you switch from a competitor.
                   </p>
                 </div>
 
@@ -70,9 +72,9 @@ export default function Section05() {
                   <div className="mb-3">
                     <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">3</div>
                   </div>
-                  <h4 className="text-white text-xl font-bold mb-1">Unlock premium access</h4>
+                  <h4 className="text-white text-xl font-bold mb-1">Claim your reward</h4>
                   <p className="text-blue-200">
-                    Tap your phone at premium venues to unlock perks, access, or exclusives.
+                    Get paid to switch or stay loyal. No points, no games—just real rewards for your real spend.
                   </p>
                 </div>
               </div>

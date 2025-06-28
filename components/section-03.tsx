@@ -18,33 +18,33 @@ export default function Section03() {
               <div className="w-[512px] max-w-full shrink-0 md:order-1">
                 {/* Copy */}
                 <h2 className="h2 mb-4" data-aos="fade-up" data-aos-anchor="[data-aos-id-3]" data-aos-delay="100">
-                  Stakeholder Value
+                  Value for Users & Merchants
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                   {/* Credential Provider */}
                   <div>
-                    <h4 className="text-lg font-bold mb-2">Credential Provider</h4>
+                    <h4 className="text-lg font-bold mb-2">User</h4>
                     <ul className="text-slate-500 list-disc list-inside space-y-1">
-                      <li>Issues ZK credential: "Spent $100k in past 12 months"</li>
-                      <li>Monetize per verification or via proof marketplace</li>
+                      <li>Get paid to switch or stay loyal</li>
+                      <li>Claim offers based on your real spend</li>
+                      <li>Privacy-first: only proof of spend is shared</li>
                     </ul>
                   </div>
                   {/* User */}
                   <div>
-                    <h4 className="text-lg font-bold mb-2">User</h4>
+                    <h4 className="text-lg font-bold mb-2">Merchant</h4>
                     <ul className="text-slate-500 list-disc list-inside space-y-1">
-                      <li>Access premium spaces, invites, VIP treatment</li>
-                      <li>Build a portfolio of credentials (fashion, travel, dining, etc.)</li>
-                      <li>Feels in control, not farmed for data</li>
+                      <li>Target high-value customers who spend at your competitors</li>
+                      <li>Reward users to win their business</li>
+                      <li>Only pay for results</li>
                     </ul>
                   </div>
                   {/* Verifier */}
                   <div>
-                    <h4 className="text-lg font-bold mb-2">Verifier</h4>
+                    <h4 className="text-lg font-bold mb-2">Vaulted</h4>
                     <ul className="text-slate-500 list-disc list-inside space-y-1">
-                      <li>Acquires high-value, high-conversion customers</li>
-                      <li>Offers tailored perks: free entry, upgrades, samples</li>
-                      <li>No need to handle or store customer data</li>
+                      <li>Connects users and merchants securely</li>
+                      <li>Ensures privacy and compliance</li>
                     </ul>
                   </div>
                 </div>

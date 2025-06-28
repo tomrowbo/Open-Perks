@@ -17,9 +17,9 @@ export default function Section07() {
             <div className="relative max-w-xl mx-auto md:max-w-none text-center md:text-left">
               {/* Section header */}
               <div className="md:max-w-3xl mb-12 md:mb-20" data-aos="fade-up">
-                <h2 className="h2 mb-4">Tiered Proofs: Bronze, Silver, Gold</h2>
+                <h2 className="h2 mb-4">Unlock More as You Spend</h2>
                 <p className="text-lg text-slate-500 mb-8">
-                  The more you spend, the more you unlock. Vaulted's zero-knowledge credentials let you prove your status—Bronze, Silver, or Gold—without revealing your identity or raw data.
+                  The more you spend, the more (and better) offers you unlock. No status games—just real rewards for your real activity. Merchants compete to win your business.
                 </p>
               </div>
 
