@@ -3,7 +3,6 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Testimonial01 from '@/public/images/testimonial-01.jpg'
-import TestimonialSign01 from '@/public/images/testimonial-sign-01.svg'
 import Testimonial02 from '@/public/images/testimonial-02.jpg'
 import TestimonialSign02 from '@/public/images/testimonial-sign-02.svg'
 
@@ -74,11 +73,6 @@ export default function Section06() {
                           <Image src={Testimonial01} className="md:max-w-none" width={384} height={180} alt="User testimonial" />
                         </div>
                         <div className="grow flex flex-col relative bg-linear-to-t from-slate-800 to-slate-700 p-6 pt-14">
-                          <Image
-                            className="absolute bottom-full translate-y-1/2"
-                            src={TestimonialSign01}
-                            alt="User sign"
-                          />
                           <p className="grow font-medium text-slate-200 mb-4">
                             “ With Vaulted, I can prove my status and unlock VIP perks—without ever giving up my personal data. It's the future of privacy.”
                           </p>

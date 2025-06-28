@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Pricing01 from '@/public/images/pricing-01.png'
-import Pricing02 from '@/public/images/pricing-02.png'
-import Pricing03 from '@/public/images/pricing-03.png'
+import Pricing01 from '@/public/images/gold.png'
+import Pricing02 from '@/public/images/silver.png'
+import Pricing03 from '@/public/images/bronze.png'
 
 export default function Section07() {
   return (
