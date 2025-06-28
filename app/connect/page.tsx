@@ -50,9 +50,9 @@ export default function ConnectPage() {
         process: "Issue",
         issuerDid: process.env.NEXT_PUBLIC_ISSUER_DID!,
         issuerAuth: token,
-        credentialId: "c21hg0g04sn270068482Om",
+        credentialId: "c21hg0g0ei1c900844348i",
         credentialSubject: {
-          amount: totalSpent,
+          "90_day_spend": totalSpent,
         },
       };
 
@@ -106,6 +106,19 @@ export default function ConnectPage() {
               <button className="btn-sm w-full text-white bg-gray-400 cursor-not-allowed" disabled>
                 Connect Barclays (Coming Soon)
               </button>
+            </div>
+            <div className="mt-8">
+              <a
+                href="/flight-checkout"
+                className="btn-sm w-full inline-flex items-center text-white bg-green-600 hover:bg-green-700 group shadow-xs"
+              >
+                Go to Flight Checkout
+                <span className="tracking-normal text-white group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
+                  <svg className="fill-current" width="12" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6.002h7.586L6.293 8.295a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.416l-4-4a1 1 0 0 0-1.414 1.416l2.293 2.293H1a1 1 0 1 0 0 2Z" />
+                  </svg>
+                </span>
+              </a>
             </div>
             {totalSpent !== null && (
               <div className="mt-8 p-4 bg-green-100 rounded-lg">
