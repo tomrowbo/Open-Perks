@@ -24,7 +24,7 @@ export default function Home() {
       <Section04 />
       <Section05 />
       <Section06 />
-      <Section07 />
+      {/* <Section07 /> */}
       <Faqs />
       <Cta />
     </>
