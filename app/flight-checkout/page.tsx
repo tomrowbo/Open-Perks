@@ -51,21 +51,11 @@ export default function FlightCheckoutPage() {
         console.log("Verification completed data:", data);
         setIsVerifying(false);
         if (data.status === "Compliant") {
-          const amount = data.credentialSubject?.amount;
-          if (typeof amount === 'number') {
-            setVerificationResult(amount);
-            if (programId === BROKE_PROGRAM_ID) {
-              setPerkMessage("Flight upgraded to free on-flight meal!");
-            } else if (amount >= 5000 && amount < 25000) {
-              setPerkMessage("Bronze tier perks applied!");
-            } else if (amount >= 25000 && amount < 100000) {
-              setPerkMessage("Silver tier perks applied!");
-            } else if (amount >= 100000) {
-              setPerkMessage("Gold tier perks applied!");
-            } else {
-              setPerkMessage("Sorry, cannot apply perks.");
-            }
+          console.log("Program ID used:", programId);
+          if (programId === BROKE_PROGRAM_ID) {
+            setPerkMessage("Flight upgraded to free on-flight meal!");
           } else {
+            // For OTHER_PROGRAM_ID or any other compliant program that doesn't grant a specific perk here
             setPerkMessage("Sorry, cannot apply perks.");
           }
         } else {
