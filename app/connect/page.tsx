@@ -5,6 +5,7 @@ import { useAirService } from '@/app/contexts/AirServiceProvider';
 import { AirCredentialWidget, type ClaimRequest, type Language } from "@mocanetwork/air-credential-sdk";
 import "@mocanetwork/air-credential-sdk/dist/style.css";
 import { BUILD_ENV } from '@mocanetwork/airkit';
+import Link from 'next/link';
 
 export default function ConnectPage() {
   const { airService } = useAirService();
@@ -84,87 +85,109 @@ export default function ConnectPage() {
   };
 
   return (
-    <section className="relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="h1 mb-4">Connect Your Bank</h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Connect your bank accounts to get started.
-            </p>
-            <div className="space-y-4">
-              <button
-                className="btn-sm w-full text-white bg-blue-600 hover:bg-blue-700"
-                onClick={handleConnectMonzo}
-                disabled={isLoading}
-              >
-                {isLoading ? 'Connecting...' : 'Connect Monzo'}
-              </button>
-              <button className="btn-sm w-full text-white bg-gray-400 cursor-not-allowed" disabled>
-                Connect Revolut (Coming Soon)
-              </button>
-              <button className="btn-sm w-full text-white bg-gray-400 cursor-not-allowed" disabled>
-                Connect Barclays (Coming Soon)
-              </button>
+    <section className="relative min-h-screen flex flex-col">
+      {/* Background Gradient */}
+      <div
+        className="fixed inset-0 bg-linear-to-tr from-blue-600 to-blue-500 pointer-events-none -z-10 min-h-screen"
+        aria-hidden="true"
+      />
+
+      {/* Header */}
+      <header className="w-full z-30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col items-start justify-between h-auto md:h-24 pt-4">
+            {/* Site branding */}
+            <div className="flex items-center space-x-3 mb-2">
+              <Link className="block" href="/" aria-label="Vaulted">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                  <g fillRule="nonzero" fill="none">
+                    <g className="fill-white" transform="translate(3 3)">
+                      <circle cx="5" cy="5" r="5" />
+                      <circle cx="19" cy="5" r="5" />
+                      <circle cx="5" cy="19" r="5" />
+                      <circle cx="19" cy="19" r="5" />
+                    </g>
+                    <g className="fill-sky-300">
+                      <circle cx="15" cy="5" r="5" />
+                      <circle cx="25" cy="15" r="5" />
+                      <circle cx="15" cy="25" r="5" />
+                      <circle cx="5" cy="15" r="5" />
+                    </g>
+                  </g>
+                </svg>
+              </Link>
+              <span className="text-2xl font-bold text-white">Vaulted</span>
             </div>
-            <div className="mt-8">
-              <a
-                href="/flight-checkout"
-                className="btn-sm w-full inline-flex items-center text-white bg-green-600 hover:bg-green-700 group shadow-xs"
-              >
-                Go to Flight Checkout
-                <span className="tracking-normal text-white group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
-                  <svg className="fill-current" width="12" height="10" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 6.002h7.586L6.293 8.295a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.416l-4-4a1 1 0 0 0-1.414 1.416l2.293 2.293H1a1 1 0 1 0 0 2Z" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            <div className="mt-4">
-              <a
-                href="/marketplace"
-                className="btn-sm w-full inline-flex items-center text-white bg-blue-600 hover:bg-blue-700 group shadow-xs"
-              >
-                Go to Reward Marketplace
-                <span className="tracking-normal text-white group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
-                  <svg className="fill-current" width="12" height="10" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 6.002h7.586L6.293 8.295a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.416l-4-4a1 1 0 0 0-1.414 1.416l2.293 2.293H1a1 1 0 1 0 0 2Z" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            {totalSpent !== null && (
-              <div className="mt-8 p-4 bg-green-100 rounded-lg">
-                <p className="text-lg text-green-800">
-                  Total spent in the last 90 days: £{totalSpent.toFixed(2)}
-                </p>
-                <div className="mt-4">
-                  <button
-                    className="btn-sm text-white bg-purple-600 hover:bg-purple-700"
-                    onClick={handleIssueCredential}
-                    disabled={isIssuing}
-                  >
-                    {isIssuing ? 'Issuing Credential...' : 'Issue Spending Credential'}
-                  </button>
-                </div>
-              </div>
-            )}
-            {issuanceSuccess && (
-              <div className="mt-8 p-4 bg-green-100 rounded-lg">
-                <p className="text-lg text-green-800">Credential issued successfully!</p>
-              </div>
-            )}
-            {issuanceError && (
-              <div className="mt-8 p-4 bg-red-100 rounded-lg">
-                <p className="text-lg text-red-800">{issuanceError}</p>
-              </div>
-            )}
-            {error && (
-              <div className="mt-8 p-4 bg-red-100 rounded-lg">
-                <p className="text-lg text-red-800">{error}</p>
-              </div>
-            )}
           </div>
+        </div>
+      </header>
+
+      <div className="flex-1 flex items-center justify-center w-full">
+        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full mx-auto">
+          <h1 className="text-3xl font-bold text-blue-700 mb-2 text-center">Connect Your Bank</h1>
+          <p className="text-lg text-gray-600 mb-8 text-center">
+            Connect your bank account to get started and unlock exclusive rewards.
+          </p>
+
+          {/* Bank Connect Buttons */}
+          <div className="flex flex-col space-y-4 mb-8">
+            <button
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
+              onClick={handleConnectMonzo}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Connecting...' : 'Connect Monzo'}
+            </button>
+            <button className="w-full bg-gray-200 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed" disabled>
+              Connect Revolut (Coming Soon)
+            </button>
+            <button className="w-full bg-gray-200 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed" disabled>
+              Connect Barclays (Coming Soon)
+            </button>
+          </div>
+
+          {/* Error Alert */}
+          {error && (
+            <div className="mb-6 p-4 bg-red-100 rounded-lg text-red-800 text-center">
+              {error}
+            </div>
+          )}
+
+          {/* Show total spent and issue credential */}
+          {totalSpent !== null && !issuanceSuccess && (
+            <div className="mb-6 p-4 bg-blue-50 rounded-lg text-blue-800 text-center">
+              <p className="text-lg font-semibold mb-2">
+                Total spent in the last 90 days: <span className="font-mono">£{totalSpent.toFixed(2)}</span>
+              </p>
+              <button
+                className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
+                onClick={handleIssueCredential}
+                disabled={isIssuing}
+              >
+                {isIssuing ? 'Claiming Credential...' : 'Claim Spending Credential'}
+              </button>
+            </div>
+          )}
+
+          {/* Issuance Success */}
+          {issuanceSuccess && (
+            <div className="mb-6 p-4 bg-green-100 rounded-lg text-green-800 text-center">
+              <p className="text-lg font-semibold mb-2">Credential issued successfully!</p>
+              <Link
+                href="/marketplace"
+                className="mt-4 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold"
+              >
+                Return to Reward Marketplace
+              </Link>
+            </div>
+          )}
+
+          {/* Issuance Error */}
+          {issuanceError && (
+            <div className="mb-6 p-4 bg-red-100 rounded-lg text-red-800 text-center">
+              {issuanceError}
+            </div>
+          )}
         </div>
       </div>
     </section>

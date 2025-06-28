@@ -84,7 +84,7 @@ const mockRewards: RewardCardProps[] = [
   { logo: '', name: 'Sephora', category: 'Shopping and Retail', offer: 'Spend $40 on beauty products in the last month, get a Free gift with any purchase over $25.' },
 ];
 
-const BROKE_PROGRAM_ID = "c21hg030e9rgy0036618wL";
+const BROKE_PROGRAM_ID = "c21hg030pva9b0076618O6";
 
 const RewardCard: React.FC<RewardCardProps & { onClaim?: () => void, isClaiming?: boolean }> = ({ logo, name, category, offer, onClaim, isClaiming }) => {
   return (
