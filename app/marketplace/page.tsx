@@ -33,7 +33,7 @@ const mockRewards: RewardCardProps[] = [
   { logo: '/images/akiflow.jpg', name: 'Akiflow', category: 'Learning and Development', offer: 'Spend $30 on productivity tools in the last month, get 3 months free on premium plan.' },
   { logo: '/images/alosim.jpeg', name: 'AloSIM', category: 'Travel', offer: 'Spend $15 on travel data in the last week, get Free 1GB data for new users.' },
   { logo: '/images/alcovita.jpg', name: 'Alcovita', category: 'Health and Wellness', offer: 'Spend $40 on health supplements in the last 30 days, get 15% off all Alcovita products.' },
-  { logo: '/images/americanexpress.png', name: 'American Express', category: 'Finance and Crypto', offer: 'Spend more than 1 cent on any card in the last 90 days, get $10 when signing up.' },
+  { logo: '/images/americanexpress.png', name: 'American Express', category: 'Finance and Crypto', offer: 'Spend more than $1 on any card in the last 90 days, get $10 when signing up.' },
   { logo: '/images/anyplace.webp', name: 'Anyplace', category: 'Travel', offer: 'Spend $200 on short-term rentals in the last 90 days, save $50 on your next long-term stay.' },
   { logo: '/images/avisandbudget.png', name: 'Avis & Budget', category: 'Travel', offer: 'Spend $100 on ride-sharing in the last month, get up to 25% off car rentals.' },
   { logo: '', name: 'BetterHelp', category: 'Health and Wellness', offer: 'Spend $50 on mental wellness apps in the last 30 days, get your first month free.' },
