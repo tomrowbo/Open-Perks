@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { usePlaidLink } from 'react-plaid-link';
 import { useAirService } from '@/app/contexts/AirServiceProvider';
 import { AirCredentialWidget, type ClaimRequest, type Language } from "@mocanetwork/air-credential-sdk";
 import "@mocanetwork/air-credential-sdk/dist/style.css";
@@ -15,21 +16,65 @@ export default function ConnectPage() {
   const [isIssuing, setIsIssuing] = useState(false);
   const [issuanceSuccess, setIssuanceSuccess] = useState(false);
   const [issuanceError, setIssuanceError] = useState<string | null>(null);
+  const [linkToken, setLinkToken] = useState<string | null>(null);
 
-  const handleConnectMonzo = async () => {
-    setIsLoading(true);
-    setError(null);
+  const createLinkToken = useCallback(async () => {
     try {
-      const response = await fetch('/api/monzo-transactions');
+      const response = await fetch('/api/plaid-transactions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create_link_token' }),
+      });
       if (!response.ok) {
-        throw new Error('Failed to fetch Monzo transactions');
+        throw new Error('Failed to create link token');
       }
-      const data = await response.json();
-      setTotalSpent(data.totalSpent);
+      const { link_token } = await response.json();
+      setLinkToken(link_token);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
-    } finally {
-      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!linkToken) {
+      createLinkToken();
+    }
+  }, [linkToken, createLinkToken]);
+
+  const { open, ready } = usePlaidLink({
+    token: linkToken,
+    onSuccess: async (public_token, metadata) => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/plaid-transactions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'exchange_public_token', public_token }),
+        });
+        if (!response.ok) {
+          throw new Error('Failed to exchange public token');
+        }
+        const { access_token } = await response.json();
+
+        const transactionsResponse = await fetch(`/api/plaid-transactions?access_token=${access_token}`);
+        if (!transactionsResponse.ok) {
+          throw new Error('Failed to fetch transactions');
+        }
+        const transactionsData = await transactionsResponse.json();
+        console.log('Plaid transactions data:', transactionsData);
+        const total = transactionsData.transactions.reduce((acc: number, t: any) => acc + t.amount, 0);
+        setTotalSpent(total);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      } finally {
+        setIsLoading(false);
+      }
+    },
+  });
+
+  const handleConnectPlaid = () => {
+    if (ready) {
+      open();
     }
   };
 
@@ -53,7 +98,7 @@ export default function ConnectPage() {
         issuerAuth: token,
         credentialId: "c21hg0g0ei1c900844348i",
         credentialSubject: {
-          "90_day_spend": totalSpent,
+          "90_day_spend": Math.floor(totalSpent),
         },
       };
 
@@ -133,16 +178,10 @@ export default function ConnectPage() {
           <div className="flex flex-col space-y-4 mb-8">
             <button
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
-              onClick={handleConnectMonzo}
-              disabled={isLoading}
+              onClick={handleConnectPlaid}
+              disabled={isLoading || !ready}
             >
-              {isLoading ? 'Connecting...' : 'Connect Monzo'}
-            </button>
-            <button className="w-full bg-gray-200 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed" disabled>
-              Connect Revolut (Coming Soon)
-            </button>
-            <button className="w-full bg-gray-200 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed" disabled>
-              Connect Barclays (Coming Soon)
+              {isLoading ? 'Connecting...' : 'Connect'}
             </button>
           </div>
 
@@ -157,7 +196,7 @@ export default function ConnectPage() {
           {totalSpent !== null && !issuanceSuccess && (
             <div className="mb-6 p-4 bg-blue-50 rounded-lg text-blue-800 text-center">
               <p className="text-lg font-semibold mb-2">
-                Total spent in the last 90 days: <span className="font-mono">£{totalSpent.toFixed(2)}</span>
+                Total spent in the last 90 days: <span className="font-mono">${totalSpent.toFixed(2)}</span>
               </p>
               <button
                 className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
