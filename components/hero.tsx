@@ -27,7 +27,7 @@ export default function Hero() {
                 Connect your bank, prove your spend, and get rewarded by top brands for your loyalty—or for switching.
               </p>
               <p className="text-lg text-blue-200 mb-8" data-aos="fade-up" data-aos-delay="250">
-                Vaulted connects your bank accounts to surface personalized, high-value offers. Merchants reward you for spending in certain categories or at competitors—no points, no games, just real rewards for your real spend.
+                OpenPerks connects your bank accounts to surface personalized, high-value offers. Merchants reward you for spending in certain categories or at competitors—no points, no games, just real rewards for your real spend.
               </p>
 
               {/* Buttons */}
@@ -52,7 +52,7 @@ export default function Hero() {
                   alt="Hero illustration"
                   aria-hidden="true"
                 />
-                <Image src={HeroImage} className="md:max-w-none" width="548" height="545" alt="Vaulted hero" data-aos="fade-up" />
+                <Image src={HeroImage} className="md:max-w-none" width="548" height="545" alt="OpenPerks hero" data-aos="fade-up" />
               </div>
             </div>
           </div>

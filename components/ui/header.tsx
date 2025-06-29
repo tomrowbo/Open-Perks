@@ -28,7 +28,7 @@ export default function Header() {
                 </g>
               </svg>
             </Link>
-            <span className="ml-3 text-slate-100 text-xl font-extrabold tracking-tight">Vaulted</span>
+            <span className="ml-3 text-slate-100 text-xl font-extrabold tracking-tight">OpenPerks</span>
           </div>
 
           {/* Desktop navigation */}

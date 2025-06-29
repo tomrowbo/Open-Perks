@@ -92,7 +92,7 @@ export default function FlightCheckoutPage() {
 
             <div className="bg-gray-100 p-6 rounded-lg text-left mb-8">
               <h2 className="text-2xl font-bold mb-4">Your Flight</h2>
-              <p><strong>Airline:</strong> Vaulted Airlines</p>
+              <p><strong>Airline:</strong> OpenPerks Airlines</p>
               <p><strong>Flight:</strong> VA101</p>
               <p><strong>From:</strong> London (LHR)</p>
               <p><strong>To:</strong> New York (JFK)</p>
@@ -106,14 +106,14 @@ export default function FlightCheckoutPage() {
                 onClick={() => handleVerifyCredential(BROKE_PROGRAM_ID)}
                 disabled={isVerifying}
               >
-                {isVerifying ? 'Connecting Vaulted...' : 'Connect Vaulted (Broke Tier)'}
+                {isVerifying ? 'Connecting OpenPerks...' : 'Connect OpenPerks (Broke Tier)'}
               </button>
               <button
                 className="btn-sm w-full text-white bg-indigo-600 hover:bg-indigo-700"
                 onClick={() => handleVerifyCredential(OTHER_PROGRAM_ID)}
                 disabled={isVerifying}
               >
-                {isVerifying ? 'Connecting Vaulted...' : 'Connect Vaulted (Other Tier)'}
+                {isVerifying ? 'Connecting OpenPerks...' : 'Connect OpenPerks (Other Tier)'}
               </button>
             </div>
 

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import QuoteAuthor from '@/public/images/quote-author-01.jpg'
 import CardsIllustration from '@/public/images/cards-illustration.svg'
-import Features from '@/public/images/VaultedCards.png'
+import Features from '@/public/images/OpenPerksCards.png'
 
 export default function Section02() {
   return (
@@ -25,7 +25,7 @@ export default function Section02() {
                   The Offer Marketplace for Real Spenders
                 </h2>
                 <p className="text-lg text-slate-400 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]" data-aos-delay="200">
-                  Vaulted lets you connect your bank and unlock exclusive offers. Merchants can target users who spend in certain categories or at competitors, and reward them for switching or loyalty. No points, no games—just real money for real spend.
+                  OpenPerks lets you connect your bank and unlock exclusive offers. Merchants can target users who spend in certain categories or at competitors, and reward them for switching or loyalty. No points, no games—just real money for real spend.
                 </p>
 
                 {/* Button */}
@@ -53,7 +53,7 @@ export default function Section02() {
                   />
                   <div>
                     <blockquote className="text-slate-400 m-0">
-                      "Vaulted helped us reach real spenders from our competitors—and only pay for results."
+                      "OpenPerks helped us reach real spenders from our competitors—and only pay for results."
                     </blockquote>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Section02() {
                     aria-hidden="true"
                   />
                   <div data-aos="fade-up" data-aos-anchor="[data-aos-id-2]">
-                    <Image src={Features} className="md:max-w-none md:rotate-[48deg]" width={775} alt="Vaulted ZK" />
+                    <Image src={Features} className="md:max-w-none md:rotate-[48deg]" width={775} alt="OpenPerks ZK" />
                   </div>
                 </div>
               </div>

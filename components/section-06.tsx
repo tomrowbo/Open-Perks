@@ -47,7 +47,7 @@ export default function Section06() {
                   What our users and partners say
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="200">
-                  Vaulted is trusted by real spenders and top brands for its privacy, real rewards, and seamless experience.
+                  OpenPerks is trusted by real spenders and top brands for its privacy, real rewards, and seamless experience.
                 </p>
                 <ul className="inline-flex flex-col text-slate-500 space-y-2.5 mb-8" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="300">
                   <li className="flex items-center"><span className="mr-3">🔒</span>Only proof of spend is shared—never your raw data</li>
@@ -73,10 +73,10 @@ export default function Section06() {
                         </div>
                         <div className="grow flex flex-col relative bg-linear-to-t from-slate-800 to-slate-700 p-6 pt-14">
                           <p className="grow font-medium text-slate-200 mb-4">
-                            “I got $50 to switch my coffee shop. Vaulted made it easy and private.”
+                            “I got $50 to switch my coffee shop. OpenPerks made it easy and private.”
                           </p>
                           <div className="font-medium text-sm text-slate-500">
-                            <span className="text-slate-200">Alex Kim</span> - <span className="text-slate-400">Vaulted User</span>
+                            <span className="text-slate-200">Alex Kim</span> - <span className="text-slate-400">OpenPerks User</span>
                           </div>
                         </div>
                       </div>
@@ -93,7 +93,7 @@ export default function Section06() {
                             alt="Venue sign"
                           />
                           <p className="grow font-medium text-slate-200 mb-4">
-                            “Vaulted brings us real spenders from our competitors, and we only pay for results.”
+                            “OpenPerks brings us real spenders from our competitors, and we only pay for results.”
                           </p>
                           <div className="font-medium text-sm text-slate-500">
                             <span className="text-slate-200">Sophie Lee</span> - <span className="text-slate-400">Lounge Manager</span>

@@ -41,7 +41,7 @@ export default function Section03() {
                   </div>
                   {/* Verifier */}
                   <div>
-                    <h4 className="text-lg font-bold mb-2">Vaulted</h4>
+                    <h4 className="text-lg font-bold mb-2">OpenPerks</h4>
                     <ul className="text-slate-500 list-disc list-inside space-y-1">
                       <li>Connects users and merchants securely</li>
                       <li>Ensures privacy and compliance</li>

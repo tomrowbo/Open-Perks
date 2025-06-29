@@ -22,7 +22,7 @@ export default function Faqs() {
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">How do I use Vaulted at a venue?</h4>
+                <h4 className="text-xl font-bold">How do I use OpenPerks at a venue?</h4>
                 <p className="text-slate-500">
                   Just tap your phone at a participating venue's terminal. Your ZK credential proves you qualify for access or perks without needing to join individual loyalty programmes.
                 </p>
@@ -49,7 +49,7 @@ export default function Faqs() {
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">Is my data safe with Vaulted?</h4>
+                <h4 className="text-xl font-bold">Is my data safe with OpenPerks?</h4>
                 <p className="text-slate-500">
                   Yes. Your raw data gets verified once and the proof is stored securely on the blockchain. From this point, you have full control over your data and what cryptographic proofs are shared.
                 </p>
@@ -57,9 +57,9 @@ export default function Faqs() {
 
               {/* Item */}
               <div className="space-y-2">
-                <h4 className="text-xl font-bold">Can I use Vaulted internationally?</h4>
+                <h4 className="text-xl font-bold">Can I use OpenPerks internationally?</h4>
                 <p className="text-slate-500">
-                  Yes! Vaulted is designed to work across borders and with any participating venue or merchant.
+                  Yes! OpenPerks is designed to work across borders and with any participating venue or merchant.
                 </p>
               </div>
             </div>

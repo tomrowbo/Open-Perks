@@ -67,7 +67,7 @@ export default function Section04() {
 
               {/* Image */}
               <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-                <Image src={Features} width={520} height={400} alt="Vaulted venues" />
+                <Image src={Features} width={520} height={400} alt="OpenPerks venues" />
               </div>
             </div>
           </div>

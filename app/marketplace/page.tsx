@@ -196,7 +196,7 @@ export default function MarketplacePage() {
           <div className="flex flex-col items-start justify-between h-auto md:h-24 pt-4">
             {/* Site branding */}
             <div className="flex items-center space-x-3 mb-2">
-              <Link className="block" href="/" aria-label="Vaulted">
+              <Link className="block" href="/" aria-label="OpenPerks">
                 <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
                   <g fillRule="nonzero" fill="none">
                     <g className="fill-white" transform="translate(3 3)">
@@ -214,7 +214,7 @@ export default function MarketplacePage() {
                   </g>
                 </svg>
               </Link>
-              <span className="text-2xl font-bold text-white">Vaulted</span>
+              <span className="text-2xl font-bold text-white">OpenPerks</span>
             </div>
           </div>
         </div>
