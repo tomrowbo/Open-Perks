@@ -11,6 +11,7 @@ import Link from 'next/link';
 export default function ConnectPage() {
   const { airService } = useAirService();
   const [totalSpent, setTotalSpent] = useState<number | null>(null);
+  const [categoryBreakdown, setCategoryBreakdown] = useState<Record<string, number> | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isIssuing, setIsIssuing] = useState(false);
@@ -62,8 +63,34 @@ export default function ConnectPage() {
         }
         const transactionsData = await transactionsResponse.json();
         console.log('Plaid transactions data:', transactionsData);
-        const total = transactionsData.transactions.reduce((acc: number, t: any) => acc + t.amount, 0);
+        
+        // Calculate total and category breakdown
+        const categoryTotals: Record<string, number> = {};
+        let total = 0;
+        
+        transactionsData.transactions.forEach((transaction: any) => {
+          total += transaction.amount;
+          
+          // Use personal_finance_category if available, otherwise fall back to category array
+          let categoryName = 'Other';
+          if (transaction.personal_finance_category?.primary) {
+            categoryName = transaction.personal_finance_category.primary;
+          } else if (transaction.category && transaction.category.length > 0) {
+            categoryName = transaction.category[0];
+          }
+          
+          if (!categoryTotals[categoryName]) {
+            categoryTotals[categoryName] = 0;
+          }
+          categoryTotals[categoryName] += transaction.amount;
+        });
+        
         setTotalSpent(total);
+        setCategoryBreakdown(categoryTotals);
+
+        // Log the category breakdown and entertainment value for debugging
+        console.log('categoryBreakdown:', categoryTotals);
+        console.log('categoryBreakdown.ENTERTAINMENT:', categoryTotals?.ENTERTAINMENT);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
       } finally {
@@ -96,9 +123,10 @@ export default function ConnectPage() {
         process: "Issue",
         issuerDid: process.env.NEXT_PUBLIC_ISSUER_DID!,
         issuerAuth: token,
-        credentialId: "c21hg0g0ei1c900844348i",
+        credentialId: "c21hi0g02o8eo0086534mH",
         credentialSubject: {
           "90_day_spend": Math.floor(totalSpent),
+          "90_day_igaming_spend": Math.floor(categoryBreakdown?.ENTERTAINMENT || 0),
         },
       };
 
@@ -194,17 +222,52 @@ export default function ConnectPage() {
 
           {/* Show total spent and issue credential */}
           {totalSpent !== null && !issuanceSuccess && (
-            <div className="mb-6 p-4 bg-blue-50 rounded-lg text-blue-800 text-center">
-              <p className="text-lg font-semibold mb-2">
-                Total spent in the last 90 days: <span className="font-mono">${totalSpent.toFixed(2)}</span>
-              </p>
-              <button
-                className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
-                onClick={handleIssueCredential}
-                disabled={isIssuing}
-              >
-                {isIssuing ? 'Claiming Credential...' : 'Claim Spending Credential'}
-              </button>
+            <div className="mb-6">
+              <div className="p-4 bg-blue-50 rounded-lg text-blue-800">
+                <p className="text-lg font-semibold mb-4 text-center">
+                  Total spent in the last 90 days: <span className="font-mono">${totalSpent.toFixed(2)}</span>
+                </p>
+                
+                {/* Category Breakdown */}
+                {categoryBreakdown && Object.keys(categoryBreakdown).length > 0 && (
+                  <div className="mt-6">
+                    <h3 className="text-md font-semibold mb-3 text-gray-700">Spending by Category:</h3>
+                    <div className="space-y-2">
+                      {Object.entries(categoryBreakdown)
+                        .sort(([, a], [, b]) => b - a)
+                        .map(([category, amount]) => {
+                          const percentage = (amount / totalSpent) * 100;
+                          return (
+                            <div key={category} className="flex items-center justify-between">
+                              <div className="flex items-center flex-1">
+                                <span className="text-sm text-gray-600 w-32 truncate">{category}</span>
+                                <div className="flex-1 mx-3">
+                                  <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div 
+                                      className="bg-blue-600 h-2 rounded-full"
+                                      style={{ width: `${percentage}%` }}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span className="text-sm font-mono text-gray-700 ml-2">
+                                ${amount.toFixed(2)}
+                              </span>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </div>
+                )}
+                
+                <button
+                  className="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-colors shadow"
+                  onClick={handleIssueCredential}
+                  disabled={isIssuing}
+                >
+                  {isIssuing ? 'Claiming Credential...' : 'Claim Spending Credential'}
+                </button>
+              </div>
             </div>
           )}
 

@@ -40,8 +40,9 @@ const mockRewards: RewardCardProps[] = [
   { logo: '/images/americanexpress.png', name: 'American Express', category: 'Finance and Crypto', offer: 'Spend more than $1 on any card in the last 90 days, get $10 when signing up.' },
   { logo: '/images/anyplace.webp', name: 'Anyplace', category: 'Travel', offer: 'Spend $200 on short-term rentals in the last 90 days, save $50 on your next long-term stay.' },
   { logo: '/images/avisandbudget.png', name: 'Avis & Budget', category: 'Travel', offer: 'Spend $100 on ride-sharing in the last month, get up to 25% off car rentals.' },
-  { logo: '', name: 'BetterHelp', category: 'Health and Wellness', offer: 'Spend $50 on mental wellness apps in the last 30 days, get your first month free.' },
-  { logo: '', name: 'Better Speech', category: 'Health and Wellness', offer: 'Spend $30 on communication courses in the last month, get 10% off your first therapy session.' },
+  { logo: '/images/Bet365.png', name: 'Bet365', category: 'Entertainment', offer: 'Spend $100 on iGaming in the last 90 days, get 10% off your first bet.' },
+  { logo: '/images/BetterHelp_Logo.jpg', name: 'BetterHelp', category: 'Health and Wellness', offer: 'Spend $50 on mental wellness apps in the last 30 days, get your first month free.' },
+  { logo: '/images/betterspeech.png', name: 'Better Speech', category: 'Health and Wellness', offer: 'Spend $30 on communication courses in the last month, get 10% off your first therapy session.' },
   { logo: '', name: 'Bilingval', category: 'Learning and Development', offer: 'Spend $20 on language learning apps in the last 90 days, get 2 months free on annual subscription.' },
   { logo: '', name: 'Boldvoice', category: 'Learning and Development', offer: 'Spend $25 on public speaking courses in the last month, unlock premium features for 3 months.' },
   { logo: '', name: 'Starbucks', category: 'Food and Dining', offer: 'Spend $100 at competitor coffee shops in the last 30 days, get $10 off your next order.' },
@@ -84,7 +85,7 @@ const mockRewards: RewardCardProps[] = [
   { logo: '', name: 'Sephora', category: 'Shopping and Retail', offer: 'Spend $40 on beauty products in the last month, get a Free gift with any purchase over $25.' },
 ];
 
-const BROKE_PROGRAM_ID = "c21hg030pva9b0076618O6";
+const BROKE_PROGRAM_ID = "c21hi0302unf60036618DC";
 
 const RewardCard: React.FC<RewardCardProps & { onClaim?: () => void, isClaiming?: boolean }> = ({ logo, name, category, offer, onClaim, isClaiming }) => {
   return (
@@ -126,8 +127,8 @@ export default function MarketplacePage() {
   const [isClaiming, setIsClaiming] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
-  const fakeCode = 'AMEX-WELCOME-TR456743';
-  const redeemUrl = 'https://americanexpress.com/redeem';
+  const fakeCode = 'BET365-WELCOME-TR456743';
+  const redeemUrl = 'https://bet365.com/';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fakeCode);
@@ -278,8 +279,8 @@ export default function MarketplacePage() {
               <RewardCard
                 key={index}
                 {...reward}
-                onClaim={reward.name === 'American Express' ? handleClaimReward : undefined}
-                isClaiming={reward.name === 'American Express' ? isClaiming : false}
+                onClaim={reward.name === 'Bet365' ? handleClaimReward : undefined}
+                isClaiming={reward.name === 'Bet365' ? isClaiming : false}
               />
             ))}
           </div>
@@ -296,8 +297,8 @@ export default function MarketplacePage() {
                 >
                   &times;
                 </button>
-                <img src="/images/americanexpress.png" alt="American Express" className="mx-auto mb-4 w-20 h-20 rounded-full shadow" />
-                <h2 className="text-2xl font-bold mb-2 text-blue-700">Welcome to American Express!</h2>
+                <img src="/images/Bet365.png" alt="Bet365" className="mx-auto mb-4 w-20 h-20 rounded-full shadow" />
+                <h2 className="text-2xl font-bold mb-2 text-blue-700">Welcome to Bet365!</h2>
                 <p className="mb-4 text-gray-600">Copy your exclusive welcome code below and redeem your offer.</p>
                 <div className="flex items-center justify-center mb-4">
                   <span className="font-mono text-lg bg-gray-100 px-4 py-2 rounded-l select-all border border-gray-200">{fakeCode}</span>
