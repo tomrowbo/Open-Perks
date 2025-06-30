@@ -36,7 +36,7 @@ export default function Header() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li className="ml-3">
-                <LoginButton />
+                {/* <LoginButton /> */}
               </li>
             </ul>
           </nav>

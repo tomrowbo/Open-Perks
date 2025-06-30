@@ -1,4 +1,3 @@
-import LoginButton from './login-button'
 import Link from 'next/link'
 import Image from 'next/image'
 import Illustration from '@/public/images/hero-illustration.svg'
@@ -30,15 +29,54 @@ export default function Hero() {
                 OpenPerks connects your bank accounts to surface personalized, high-value offers. Merchants reward you for spending in certain categories or at competitors—no points, no games, just real rewards for your real spend.
               </p>
 
-              {/* Buttons */}
+              {/* Waitlist Form */}
               <div
-                className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mb-12 md:mb-0"
+                className="max-w-md mx-auto md:mx-0 mb-12 md:mb-0"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <div>
-                  <LoginButton />
-                </div>
+                <form
+                  action="https://formspree.io/f/xzzgojeq"
+                  method="POST"
+                  className="space-y-4"
+                >
+                  <div>
+                    <label className="block text-blue-200 text-sm font-medium mb-2" htmlFor="email">
+                      Your email:
+                    </label>
+                    <input 
+                      type="email" 
+                      name="email" 
+                      id="email"
+                      required
+                      className="w-full px-4 py-2 rounded bg-white/10 border border-blue-400/30 text-white placeholder-blue-200/50 focus:outline-none focus:border-blue-300"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-blue-200 text-sm font-medium mb-2" htmlFor="message">
+                      Your message:
+                    </label>
+                    <textarea 
+                      name="message" 
+                      id="message"
+                      rows={3}
+                      className="w-full px-4 py-2 rounded bg-white/10 border border-blue-400/30 text-white placeholder-blue-200/50 focus:outline-none focus:border-blue-300 resize-none"
+                      placeholder="Tell us what you're interested in"
+                    />
+                  </div>
+                  <button 
+                    type="submit"
+                    className="btn-sm w-full inline-flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 group shadow-sm"
+                  >
+                    Join Waitlist
+                    <span className="tracking-normal text-blue-200 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-2">
+                      <svg className="fill-current" width="12" height="10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.002h7.586L6.293 8.295a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.416l-4-4a1 1 0 0 0-1.414 1.416l2.293 2.293H1a1 1 0 1 0 0 2Z" />
+                      </svg>
+                    </span>
+                  </button>
+                </form>
               </div>
             </div>
 
